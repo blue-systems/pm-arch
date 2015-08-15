@@ -10,7 +10,7 @@ Currently KUbuntu based reference images are available which is flashable on LG 
 
 This project in perticular attempts to have Arch Linux based Plasma Mobile images.
 
-# Current status
+# Planning
 
 Plan of action to provide Arch Linux based images for Plasma mobile
 
@@ -27,3 +27,7 @@ Plan of action to provide Arch Linux based images for Plasma mobile
 - [ ] Package Plasma Mobile packages for armv7
 - [ ] Remaster alarm image to have Plasma Mobile components installed
 - [ ] Have it tested on other devices
+
+# Current status
+
+Currently archiso tool is used to create remastered Arch Linux x86_64 image. This is modified releng profile of ArchISO.
