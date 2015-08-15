@@ -59,3 +59,11 @@ wpa_actiond
 wvdial
 xl2tpd
 zd1211-firmware
+xf86-video-intel
+xf86-video-ati
+xf86-video-nouveau
+xorg-server-xwayland
+qt5-wayland
+kwayland
+kwayland-integration
+kwin
