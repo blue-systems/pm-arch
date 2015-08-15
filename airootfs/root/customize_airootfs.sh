@@ -7,6 +7,8 @@ locale-gen
 
 ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
+! id phablet && useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh phablet
+
 usermod -s /usr/bin/zsh root
 cp -aT /etc/skel/ /root/
 chmod 700 /root
