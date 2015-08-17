@@ -17,7 +17,7 @@ Plan of action to provide Arch Linux based images for Plasma mobile
 ## Milestone 1
 
 - [ ] Remaster Arch Linux ISO and have minimum packages required for kwin_wayland/plasma-workspace
-- [ ] Organize required packages for the plasma-mobile
+- [ ] Organize required packages for the plasma-mobile ( see bhush9/plasma-arch/issues/1 )
 - [ ] Write PKGBUILDs for the missing packages
 - [ ] Provide Plasma mobile images based on the amd64/x86_64 which allows to test plasma-mobile
 
