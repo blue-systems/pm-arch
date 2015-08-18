@@ -30,4 +30,7 @@ Plan of action to provide Arch Linux based images for Plasma mobile
 
 # Current status
 
-Currently archiso tool is used to create remastered Arch Linux x86_64 image. This is modified releng profile of ArchISO.
+~~ Currently archiso tool is used to create remastered Arch Linux x86_64 image. This is modified releng profile of ArchISO. ~~
+
+- Initial scripts for remastering ISO based on archiso tool
+- Some of core packages packaged and available on : http://arch.pangea.pub/plasma-mobile/
