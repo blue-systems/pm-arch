@@ -1,0 +1,36 @@
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=plasma-maliit-framework-git
+pkgver=r72.0e273b3
+pkgrel=1
+pkgdesc="Framework for Maliit integration with Plasma"
+arch=('i686' 'x86_64')
+url="http://projects.kde.org/plasma-maliit-framework"
+license=('GPL')
+groups=()
+depends=('qt5-declarative' 'kwayland')
+makedepends=('git')
+provides=("plasma-maliit-framework-git")
+conflicts=("plasma-maliit-framework-git")
+install=
+source=('git://anongit.kde.org/plasma-maliit-framework.git')
+md5sums=('SKIP')
+
+pkgver() {
+    cd plasma-maliit-framework
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+    mkdir -p build
+}
+
+build() {
+    cd build
+    qmake -makefile CONFIG+=qt5-inputcontext CONFIG+=nohwkeyboard CONFIG+=enable-dbus-activation CONFIG+=notests CONFIG+=nodoc ../plasma-maliit-framework
+    make
+}
+
+package() {
+    cd build
+    make install INSTALL_ROOT="$pkgdir/"
+}

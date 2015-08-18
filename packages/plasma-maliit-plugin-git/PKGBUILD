@@ -1,0 +1,36 @@
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=plasma-maliit-plugins-git
+pkgver=r9.3c60847
+pkgrel=1
+pkgdesc="Plasma Integration for Maliit virtual keyboard"
+arch=('any')
+url="http://projects.kde.org/plasma-maliit-plugins"
+license=('GPL')
+groups=()
+depends=('qt5-declarative')
+makedepends=('git')
+provides=("plasma-maliit-plugins-git")
+conflicts=("plasma-maliit-plugins-git")
+install=
+source=('git://anongit.kde.org/plasma-maliit-plugins.git')
+md5sums=('SKIP')
+
+pkgver() {
+    cd plasma-maliit-plugins-git
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+    mkdir -p build
+}
+
+build() {
+    cd build
+    qmake CONFIG+=notests CONFIG+=nodoc CONFIG+=disable-maliit-keyboard ../plasma-maliit-plugins
+    make
+}
+
+package() {
+    cd build
+    make install INSTALL_ROOT="$pkgdir/"
+}
