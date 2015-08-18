@@ -1,0 +1,41 @@
+# Maintainer: Bhushan Shah <bhush94 at gmail dot com>
+pkgname=plasma-angelfish-git
+pkgver=r321.1e816d5
+pkgrel=1
+pkgdesc="Plasma Demo Webbrowser for Mobile Devices"
+arch=('i686' 'x86_64')
+url="https://community.kde.org/Plasma/Mobile"
+license=('GPL3')
+depends=('plasma-framework' 'qt5-webengine')
+makedepends=('git' 'cmake')
+provides=('plasma-angelfish')
+source=('git://anongit.kde.org/plasma-angelfish.git')
+install=plasma-angelfish-git.install
+md5sums=('SKIP')
+
+_gitname="plasma-angelfish"
+
+pkgver() {
+  cd plasma-angelfish
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../plasma-angelfish \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBUILD_TESTING=OFF \
+    -DLIB_INSTALL_DIR=lib \
+    -DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+    -DCMAKE_BUILD_TYPE=Release
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir/" install
+}
