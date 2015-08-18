@@ -67,3 +67,9 @@ qt5-wayland
 kwayland
 kwayland-integration
 kwin
+plasma-mobile-git
+plasma-phone-components-git
+plasma-maliit-framework-git
+plasma-maliit-plugins-git
+plasma-camera-git
+plasma-settings-git
