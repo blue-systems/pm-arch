@@ -1,0 +1,14 @@
+# Maintainer: Bhushan Shah <bhush94 at gmail dot com>
+pkgname=kwinwrapper-git
+pkgver=1
+pkgrel=1
+pkgdesc="Simple script to start plasma on Arch Linux"
+arch=('i686' 'x86_64')
+url="https://community.kde.org/Plasma/Mobile"
+license=('GPL3')
+source=('kwinwrapper')
+md5sums=('287dc68a09db2246610abc682e72689e')
+
+package() {
+    install -Dm755 kwinwrapper ${pkgdir}/usr/bin/kwinwrapper
+}
