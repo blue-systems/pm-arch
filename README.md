@@ -44,3 +44,25 @@ Server = http://arch.pangea.pub/plasma-mobile/$arch
 ```
 
 Note: currently it requires both [testing] and [kde-unstable] enabled due to Plasma 5.4 and KF5 5.13 requirement. (It won't work in combination with just packages from [extra])
+
+# Creating ISO
+
+```
+# In archlinux system
+git clone https://github.com/bhush9/plasma-arch.git
+cd plasma-arch
+sudo build.sh -v
+```
+
+# Co-installing with Plasma packages
+
+This method is unsupported since, some stuffs are not working nicely with plasma-desktop and have side effects on plasma-desktop like notifications applet from plasma-mobile is loaded in the desktop session and much more.
+
+Enabled [kde-unstable] and [testing] as well as add the repo mentioned above in /etc/pacman.conf then,
+
+```
+sudo pacman -Syu
+sudo pacman -S plasma-phone-components-git plasma-mobile-git kwinwrapper-git plasma-maliit-framework-git plasma-maliit-plugins-git plasma-settings-git
+```
+
+Once installed, switch to tty2 and run ```kwinwrapper```
