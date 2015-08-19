@@ -19,4 +19,4 @@ if [ "`cat /sys/devices/virtual/dmi/id/board_name`" = "EXOPG06411" ]; then
 fi
 
 touch /tmp/simplelogin_starting
-kwin_wayland --xwayland --libinput --inputmethod maliit-server plasma-phone 2> /tmp/kwin_logs
+kwin_wayland --xwayland --libinput --inputmethod maliit-server plasma-phone
