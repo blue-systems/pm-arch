@@ -65,4 +65,12 @@ sudo pacman -Syu
 sudo pacman -S plasma-phone-components-git plasma-mobile-git kwinwrapper-git plasma-maliit-framework-git plasma-maliit-plugins-git plasma-settings-git
 ```
 
-Once installed, switch to tty2 and run ```kwinwrapper```
+Once installed, switch to tty2 and run `kwinwrapper`
+
+# Adding package in ISO
+
+If you want to add new packages in ISO just add its package name in packages.both file.
+
+# Custom packages that are not available in repository
+
+Open a issue if you want new application to be packaged in [plasma-mobile] repository
