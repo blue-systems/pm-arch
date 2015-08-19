@@ -64,6 +64,7 @@ xf86-video-ati
 xf86-video-nouveau
 xorg-server-xwayland
 qt5-wayland
+qt5-graphicaleffects
 kwayland
 kwayland-integration
 kwin
