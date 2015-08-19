@@ -68,6 +68,10 @@ qt5-graphicaleffects
 kwayland
 kwayland-integration
 kwin
+muon
+kinfocenter
+plasma-nm
+plasma-pa
 plasma-mobile-git
 plasma-phone-components-git
 plasma-maliit-framework-git
