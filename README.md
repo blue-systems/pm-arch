@@ -62,7 +62,10 @@ Enabled [kde-unstable] and [testing] as well as add the repo mentioned above in 
 
 ```
 sudo pacman -Syu
-sudo pacman -S plasma-phone-components-git plasma-mobile-git kwinwrapper-git plasma-maliit-framework-git plasma-maliit-plugins-git plasma-settings-git
+sudo pacman -S qt5-wayland
+sudo pacman -S plasma-phone-components-git plasma-mobile-git \
+               kwinwrapper-git plasma-maliit-framework-git \
+               plasma-maliit-plugins-git plasma-settings-git
 ```
 
 Once installed, switch to tty2 and run `kwinwrapper`
