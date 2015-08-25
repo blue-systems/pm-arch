@@ -1,0 +1,1 @@
+export FORCE_RIL_NUM_MODEMS=1

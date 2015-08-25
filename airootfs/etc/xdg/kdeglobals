@@ -1,0 +1,20 @@
+[KDE] 
+StartDragDist=40
+
+[Icons]
+Theme=breeze
+
+[General]
+BrowserApplication[$e]=!webbrowser-app
+ColorScheme=Breeze
+Name=Breeze
+XftHintStyle=
+XftSubPixel=none
+desktopFont=Oxygen-Sans,7,-1,5,50,0,0,0,0,0
+fixed=Oxygen Mono,7,-1,5,50,0,0,0,0,0
+font=Oxygen-Sans,7,-1,5,50,0,0,0,0,0
+menuFont=Oxygen-Sans,7,-1,5,50,0,0,0,0,0
+shadeSortColumn=true
+smallestReadableFont=Oxygen-Sans,5,-1,5,50,0,0,0,0,0
+taskbarFont=Oxygen-Sans,7,-1,5,50,0,0,0,0,0
+toolBarFont=Oxygen-Sans,6,-1,5,50,0,0,0,0,0
