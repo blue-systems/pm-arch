@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e -u
+set -ex -u
 
 iso_name=archlinux
 iso_label="ARCH_$(date +%Y%m)"
