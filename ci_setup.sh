@@ -8,8 +8,6 @@ pacman -Syu --noconfirm
 pacman-db-upgrade
 pacman -S --noconfirm git archiso openssh
 
-cp -r /tmp/working /tmp/working2
-
-cd /tmp/working2
+cd /tmp/working
 
 ./build.sh -v
