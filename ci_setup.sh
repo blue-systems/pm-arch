@@ -5,6 +5,8 @@ cleanup() {
     rm -rf {work, out}
 }
 
+cleanup
+
 pacman-key --refresh
 pacman -Syu --noconfirm
 pacman-db-upgrade
