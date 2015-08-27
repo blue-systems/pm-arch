@@ -47,8 +47,17 @@ Note: currently it requires both [testing] and [kde-unstable] enabled due to Pla
 
 # Creating ISO
 
+## On non-arch hosts
+
 ```
-# In archlinux system
+docker run --rm=true --privileged=true -v `pwd`:/tmp/working \
+     -v /var/cache/pacman:/var/cache/pacman \
+     base/archlinux /tmp/working/setup.sh
+```
+
+## On arch hosts
+
+```
 git clone https://github.com/bhush9/plasma-arch.git
 cd plasma-arch
 sudo build.sh -v
@@ -78,18 +87,3 @@ If you want to add new packages in ISO just add its package name in packages.bot
 
 Open a issue if you want new application to be packaged in [plasma-mobile] repository
 
-# To create ISO locally
-
-## On non-arch hosts
-
-```
-docker run --rm=true --privileged=true -v `pwd`:/tmp/working \
-     -v /var/cache/pacman:/var/cache/pacman \
-     base/archlinux /tmp/working/setup.sh
-```
-
-## On arch hosts
-
-```
-sudo ./build.sh -v
-```
