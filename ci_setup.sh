@@ -12,6 +12,8 @@ pacman -S --noconfirm git archiso openssh
 
 cd /tmp/working
 
+mkdir /run/shm
+
 ./build.sh -v
 
 iso_name=archlinux-$(date +%Y.%m.%d)-x86_64.iso
