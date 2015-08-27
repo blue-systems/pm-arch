@@ -82,8 +82,14 @@ Open a issue if you want new application to be packaged in [plasma-mobile] repos
 
 ## On non-arch hosts
 
-docker run --rm=true --privileged=true -v `pwd`:/tmp/working -v /var/cache/pacman:/var/cache/pacman base/archlinux /tmp/working/setup.sh
+```
+docker run --rm=true --privileged=true -v `pwd`:/tmp/working \
+     -v /var/cache/pacman:/var/cache/pacman \
+     base/archlinux /tmp/working/setup.sh
+```
 
 ## On arch hosts
 
+```
 sudo ./build.sh -v
+```
