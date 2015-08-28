@@ -5,6 +5,9 @@ cleanup() {
     rm -rf {work, out}
 }
 
+chown -R jenkins:jenkins work
+return 0;
+
 cleanup
 
 pacman-key --refresh
@@ -17,4 +20,3 @@ cd /tmp/working
 mkdir /run/shm
 
 ./build.sh -v
-
