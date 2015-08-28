@@ -13,6 +13,12 @@ usermod -s /usr/bin/zsh root
 cp -aT /etc/skel/ /root/
 chmod 700 /root
 
+# Change ownership of root and etc manually
+# this is bug in archiso
+# Reporting on todo
+chown -R root:root /root
+chown -R root:root /etc
+
 sed -i 's/#\(PermitRootLogin \)no/\1yes/' /etc/ssh/sshd_config
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
 sed -i 's/#\(Storage=\)auto/\1volatile/' /etc/systemd/journald.conf
