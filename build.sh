@@ -4,7 +4,7 @@ set -ex -u
 
 iso_name=plasma-arch
 iso_label="ARCH_$(date +%Y%m)"
-iso_version=$(date %Y%m%d)
+iso_version=$(date +%Y%m%d)
 install_dir=arch
 work_dir=work
 out_dir=out
