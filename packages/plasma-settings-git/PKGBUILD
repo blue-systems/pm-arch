@@ -1,6 +1,6 @@
 # Maintainer: Bhushan Shah <bhush94 at gmail dot com>
 pkgname=plasma-settings-git
-pkgver=r533.ef09705
+pkgver=r534.15287cd
 pkgrel=1
 pkgdesc="Settings application for Mobile Devices running Plasma"
 arch=('i686' 'x86_64')

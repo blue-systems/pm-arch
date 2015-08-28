@@ -1,0 +1,43 @@
+# Maintainer: Bhushan Shah <bhush94 at gmail dot com>
+pkgname=koko-git
+pkgver=r245.0958e6b
+pkgrel=1
+pkgdesc="An Image Gallery application"
+arch=('i686' 'x86_64')
+url="http://projects.kde.org/koko"
+license=('GPL')
+depends=('plasma-framework' 'baloo' 'hicolor-icon-theme')
+makedepends=('git' 'cmake')
+provides=('koko')
+source=('git://anongit.kde.org/koko.git' 'http://download.geonames.org/export/dump/cities1000.zip' 'http://download.geonames.org/export/dump/admin1CodesASCII.txt'
+        'http://download.geonames.org/export/dump/admin2Codes.txt')
+install=koko-git.install
+md5sums=('SKIP' 'SKIP' 'SKIP' 'SKIP')
+
+_gitname="koko"
+
+pkgver() {
+  cd koko
+  cp ../{cities1000.zip,admin1CodesASCII.txt,admin2Codes.txt} src
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../koko \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBUILD_TESTING=OFF \
+    -DLIB_INSTALL_DIR=lib \
+    -DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+    -DCMAKE_BUILD_TYPE=Release
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir/" install
+}
