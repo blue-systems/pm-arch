@@ -8,8 +8,10 @@ arch=('i686' 'x86_64')
 url=https://calamares.io/
 license='GPL'
 depends=('qt5-svg' 'qt5-webkit' 'boost-libs' 'parted' 'python' 'yaml-cpp')
-source=('git://github.com/calamares/calamares.git')
-md5sums=('SKIP')
+source=('git://github.com/calamares/calamares.git'
+        'git://github.com/calamares/partitionmanager.git'
+        )
+md5sums=('SKIP' 'SKIP')
 
 pkgver() {
   cd calamares
@@ -18,6 +20,10 @@ pkgver() {
 
 prepare() {
   mkdir -p build
+  cd calamares
+  git submodule init
+  git config submodule.src/modules/partition/partitionmanager.url "$srcdir"/partitionmanager
+  git submodule update src/modules/partition/partitionmanager
 }
 
 build() {
@@ -25,8 +31,9 @@ build() {
   cmake ../calamares \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=Debug \
+    -DWITH_PARTITIONMANAGER=1 \
     -DCMAKE_INSTALL_LIBDIR=lib \
-    -DLIBEXEC_INSTALL_DIR=lib \
+    -DLIBEXEC_INSTALL_DIR=lib
   make
 }
 
