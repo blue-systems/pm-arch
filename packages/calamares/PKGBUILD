@@ -1,0 +1,36 @@
+# Maintainer: Bhushan Shah <bshah@kde.org>
+
+pkgname=calamares
+pkgver=r1476.0b4be4c
+pkgrel=1
+pkgdesc="Distribution Independent installer"
+arch=('i686' 'x86_64')
+url=https://calamares.io/
+license='GPL'
+depends=('qt5-svg' 'qt5-webkit' 'boost-libs' 'parted' 'python' 'yaml-cpp')
+source=('git://github.com/calamares/calamares.git')
+md5sums=('SKIP')
+
+pkgver() {
+  cd calamares
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../calamares \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=Debug \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DLIBEXEC_INSTALL_DIR=lib \
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir" install
+}
