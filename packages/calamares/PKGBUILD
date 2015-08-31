@@ -1,8 +1,8 @@
 # Maintainer: Bhushan Shah <bshah@kde.org>
 
 pkgname=calamares
-pkgver=r1476.0b4be4c
-pkgrel=2
+pkgver=r1477.8a52661
+pkgrel=1
 pkgdesc="Distribution Independent installer"
 arch=('i686' 'x86_64')
 url=https://calamares.io/

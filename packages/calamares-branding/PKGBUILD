@@ -1,0 +1,18 @@
+# Maintainer: Bhushan Shah <bshah@kde.org>
+pkgname=calamares-branding
+pkgver=1
+pkgrel=1
+arch=("any")
+pkgdesc="Calamares branding and modules for Plasma mobile on Arch"
+url="https://github.com/blue-systems/plasma-arch"
+license=('GPL')
+depends=('calamares')
+conflicts=()
+source=("main.py" "module.desc")
+md5sums=('38c7578b7fa5c7d40dffcede3bb34d62'
+         '56550ddb4394ec07e90510b301442e75')
+
+package() {
+    install -Dm644 main.py -t ${pkgdir}/usr/lib/calamares/modules/cleanup/
+    install -Dm644 module.desc -t ${pkgdir}/usr/lib/calamares/modules/cleanup/
+}
