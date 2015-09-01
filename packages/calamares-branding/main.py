@@ -26,9 +26,6 @@ def run():
     root_mount_point = libcalamares.globalstorage.value("rootMountPoint")
     target_kernel_path = "{}/boot/vmlinuz-linux".format(root_mount_point)
 
-    libcalamares.utils.debug("Setting default journal storage to auto");
-    libcalamares.utils.check_chroot_call(["sed", "-i", "'s/Storage=volatile/#Storage=auto/'", "/etc/systemd/journald.conf"])
-
     libcalamares.utils.debug("Removing the dhcpcd rule for eth0")
     libcalamares.utils.check_chroot_call(["rm", "/etc/udev/rules.d/81-dhcpcd.rules"])
 
