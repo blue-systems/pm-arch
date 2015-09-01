@@ -20,6 +20,7 @@
 
 import libcalamares
 
+import os
 
 def run():
 

@@ -1,7 +1,7 @@
 # Maintainer: Bhushan Shah <bshah@kde.org>
 pkgname=calamares-branding
 pkgver=1
-pkgrel=1
+pkgrel=2
 arch=("any")
 pkgdesc="Calamares branding and modules for Plasma mobile on Arch"
 url="https://github.com/blue-systems/plasma-arch"
@@ -9,7 +9,7 @@ license=('GPL')
 depends=('calamares')
 conflicts=()
 source=("main.py" "module.desc")
-md5sums=('e8b29bd20333cdc5a67e42b6719d76b3'
+md5sums=('596b86d0cf6267efdbf3e4fc562f05b3'
          '56550ddb4394ec07e90510b301442e75')
 
 package() {
