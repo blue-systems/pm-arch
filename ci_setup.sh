@@ -10,6 +10,10 @@ cd /tmp/working
 rm -rf out/
 rm -rf work/
 
+if [ -d out && -d work ]; then
+    exit 1;
+fi
+
 mkdir /run/shm
 
 ./build.sh -v
