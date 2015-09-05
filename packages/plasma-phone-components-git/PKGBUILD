@@ -1,12 +1,12 @@
 # Maintainer: Bhushan Shah <bhush94 at gmail dot com>
 pkgname=plasma-phone-components-git
 pkgver=r550.035fcb3
-pkgrel=1
+pkgrel=2
 pkgdesc="Modules providing phone functionality for Plasma"
 arch=('i686' 'x86_64')
 url="https://community.kde.org/Plasma/Mobile"
 license=('GPL3')
-depends=('plasma-workspace' 'kpeople' 'telepathy-qt5')
+depends=('plasma-workspace' 'kpeople' 'telepathy-qt5' 'qt5-graphicaleffects')
 makedepends=('git' 'cmake')
 provides=('plasma-phone-components')
 source=('git://anongit.kde.org/plasma-phone-components.git')
