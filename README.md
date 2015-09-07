@@ -16,10 +16,10 @@ Plan of action to provide Arch Linux based images for Plasma mobile
 
 ## Milestone 1
 
-- [ ] Remaster Arch Linux ISO and have minimum packages required for kwin_wayland/plasma-workspace
+- [x] Remaster Arch Linux ISO and have minimum packages required for kwin_wayland/plasma-workspace
 - [x] Organize required packages for the plasma-mobile ( see #1 )
 - [x] Write PKGBUILDs for the missing packages
-- [ ] Provide Plasma mobile images based on the amd64/x86_64 which allows to test plasma-mobile
+- [x] Provide Plasma mobile images based on the amd64/x86_64 which allows to test plasma-mobile
 
 ## Milestone 2
 
@@ -43,8 +43,6 @@ SigLevel = Optional
 Server = http://arch.pangea.pub/plasma-mobile/$arch
 ```
 
-Note: currently it requires both [testing] and [kde-unstable] enabled due to Plasma 5.4 and KF5 5.13 requirement. (It won't work in combination with just packages from [extra])
-
 # Creating ISO
 
 ## On non-arch hosts
@@ -66,8 +64,6 @@ sudo build.sh -v
 # Co-installing with Plasma packages
 
 This method is unsupported since, some stuffs are not working nicely with plasma-desktop and have side effects on plasma-desktop like notifications applet from plasma-mobile is loaded in the desktop session and much more.
-
-Enabled [kde-unstable] and [testing] as well as add the repo mentioned above in /etc/pacman.conf then,
 
 ```
 sudo pacman -Syu
