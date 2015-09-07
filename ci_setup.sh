@@ -4,7 +4,7 @@ set -ex
 pacman -Sy --noconfirm archlinux-keyring
 pacman -Syu --noconfirm
 pacman-db-upgrade
-pacman -S --noconfirm git archiso openssh
+pacman -S --noconfirm archiso
 
 cd /tmp/working
 rm -rf out/
