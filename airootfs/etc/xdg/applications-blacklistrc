@@ -1,3 +1,3 @@
 [Applications]
 allapps=org.kde.koko,webbrowser-app,org.kde.konsole,ubuntu-system-settings,org.kde.phone.camera,com.ubuntu.clock_clock_3.3.280.1,address-book-app,org.kde.phone.dialer,org.kde.phone.phonebook,active-settings
-blacklist=cuttlefish,org.kde.plasma.themeexplorer,org.kde.klipper,ciborium,syncmonitorhelper
+blacklist=cuttlefish,org.kde.plasma.themeexplorer,org.kde.klipper,ciborium,syncmonitorhelper,avahi-discover,bssh,bvnc
