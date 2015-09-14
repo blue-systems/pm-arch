@@ -1,3 +1,4 @@
 out/
 work/
 *.pkg.tar.xz
+*.log*
