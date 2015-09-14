@@ -66,6 +66,8 @@ xf86-video-nouveau
 xorg-server-xwayland
 qt5-wayland
 qt5-graphicaleffects
+kaccounts-integration
+kaccounts-providers
 kwayland
 kwayland-integration
 kwin
