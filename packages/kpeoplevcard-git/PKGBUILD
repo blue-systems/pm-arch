@@ -1,0 +1,38 @@
+# Maintainer: Bhushan Shah <bhush94 at gmail dot com>
+pkgname=kpeoplevcard-git
+pkgver=r14.118db49
+pkgrel=1
+pkgdesc="Library to expose vcards to KPeople"
+arch=('i686' 'x86_64')
+url="http://projects.kde.org/kpeoplevcard"
+license=('LGPL')
+depends=('kpeople')
+makedepends=('git')
+provides=('kpeoplevcard')
+source=('git://anongit.kde.org/kpeoplevcard.git')
+md5sums=('SKIP')
+
+pkgver() {
+  cd kpeoplevcard
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../kpeoplevcard \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DBUILD_TESTING=OFF \
+    -DLIB_INSTALL_DIR=lib \
+    -DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
+    -DCMAKE_BUILD_TYPE=Release
+  make
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir/" install
+}

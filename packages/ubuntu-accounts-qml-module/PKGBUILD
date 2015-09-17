@@ -1,0 +1,33 @@
+# Maintainer: Bhushan Shah <bshah@kde.org>
+pkgname=ubuntu-accounts-qml-module
+pkgver=r58
+pkgrel=1
+pkgdesc="Expose the Online Accounts API to QML applications"
+arch=('i686' 'x86_64')
+url="https://developer.ubuntu.com/en/start/platform/guides/online-accounts-developer-guide/"
+license=('GPL')
+depends=('libaccounts-qt5' 'qt5-declarative' 'signon')
+makedepends=('bzr') # 'bzr', 'git', 'mercurial' or 'subversion'
+provides=("ubuntu-accounts-qml-module")
+conflicts=("ubuntu-accounts-qml-module")
+source=('bzr+lp:accounts-qml-module')
+noextract=()
+md5sums=('SKIP')
+
+pkgver() {
+	cd accounts-qml-module
+	printf "r%s" "$(bzr revno)"
+}
+
+build() {
+    cd accounts-qml-module
+    qmake PREFIX=/usr .
+    make
+}
+
+package() {
+    cd accounts-qml-module
+    make INSTALL_ROOT="$pkgdir" install
+    rm -r $pkgdir/usr/share
+    rm -r $pkgdir/usr/bin
+}
