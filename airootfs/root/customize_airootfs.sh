@@ -7,7 +7,7 @@ locale-gen
 
 ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 
-! id phablet && useradd -m -p "1234" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh phablet
+! id phablet && useradd -m -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh phablet
 
 usermod -s /usr/bin/zsh root
 cp -aT /etc/skel/ /root/
@@ -22,6 +22,7 @@ chown -R root:root /etc
 chmod 440 /etc/sudoers
 
 echo 'root:root' | chpasswd
+echo 'phablet:1234' | chpasswd
 
 sed -i 's/#\(PermitRootLogin \)no/\1yes/' /etc/ssh/sshd_config
 sed -i "s/#Server/Server/g" /etc/pacman.d/mirrorlist
