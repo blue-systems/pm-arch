@@ -50,7 +50,7 @@ Server = http://arch.pangea.pub/plasma-mobile/$arch
 ```
 docker run --rm=true --privileged=true -v `pwd`:/tmp/working \
      -v /var/cache/pacman:/var/cache/pacman \
-     base/archlinux /tmp/working/setup.sh
+     base/archlinux /tmp/working/ci_setup.sh
 ```
 
 ## On arch hosts
