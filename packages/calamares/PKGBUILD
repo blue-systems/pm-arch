@@ -6,7 +6,7 @@ pkgrel=1
 pkgdesc="Distribution Independent installer"
 arch=('i686' 'x86_64')
 url=https://calamares.io/
-license='GPL'
+license=('GPL')
 depends=('qt5-svg' 'qt5-webkit' 'boost-libs' 'parted' 'python' 'yaml-cpp')
 source=('git://github.com/calamares/calamares.git'
         'git://github.com/calamares/partitionmanager.git'
