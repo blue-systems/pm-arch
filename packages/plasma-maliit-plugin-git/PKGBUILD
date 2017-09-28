@@ -16,7 +16,7 @@ source=('git://anongit.kde.org/plasma-maliit-plugins.git')
 md5sums=('SKIP')
 
 pkgver() {
-    cd plasma-maliit-plugins-git
+    cd plasma-maliit-plugins
 	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
