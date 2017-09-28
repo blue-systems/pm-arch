@@ -1,0 +1,17 @@
+# Maintainer: Bhushan Shah < bshah at kde dot org >
+pkgname=lxc-android
+pkgver=0.1
+pkgrel=2
+pkgdesc="LXC container configuration for android"
+arch=('any')
+url="https://github.com/halium/lxc-android"
+license=('Apache')
+makedepends=('git')
+source=('lxc-android::git+https://github.com/halium/lxc-android.git#branch=master')
+md5sums=('SKIP')
+
+package() {
+    cd lxc-android
+    cp -r usr/ etc/ var/ $pkgdir
+    cp -r lib/ $pkgdir/usr/
+}

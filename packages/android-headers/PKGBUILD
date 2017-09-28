@@ -1,0 +1,16 @@
+# Maintainer: Bhushan Shah < bshah at kde dot org >
+pkgname=android-headers
+pkgver=7.1.1
+pkgrel=2
+pkgdesc="Android headers extracted through libhybris"
+arch=('any')
+url="https://github.com/halium/android-headers"
+license=('Apache')
+makedepends=('git')
+source=('android-headers::git+https://github.com/halium/android-headers.git#branch=halium-7.1')
+md5sums=('SKIP')
+
+package() {
+    cd android-headers
+    make PREFIX="/usr" DESTDIR="$pkgdir/" install
+}
