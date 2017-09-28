@@ -8,7 +8,7 @@ url="https://github.com/bhush9/simplelogin"
 license=('GPL')
 depends=('qt5-base')
 makedepends=('git' 'cmake')
-source=('https://github.com/bhush9/simplelogin.git')
+source=('git://github.com/bhush9/simplelogin.git')
 md5sums=('SKIP')
 
 pkgver() {
